@@ -1,0 +1,45 @@
+{
+  "id": "/",
+  "name": "SaleEvents Technical Layout Framework",
+  "short_name": "SaleEvents",
+  "description": "An open-source PWA reference blueprint optimized for multi-subdomain standalone navigation context sharing across 12 distinct regional origins.",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": [
+    "development",
+    "reference"
+  ],
+  "start_url": "https://sale-events.com/?utm_source=pwa",
+  "scope": "https://sale-events.com/",
+  "display": "standalone",
+  "theme_color": "#e2923d",
+  "background_color": "#e2923d",
+  "icons": [
+    {
+      "src": "https://cdn.sale-events.com/images/icon/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn.sale-events.com/images/icon/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "scope_extensions": [
+    { "type": "origin", "origin": "https://au.sale-events.com" },
+    { "type": "origin", "origin": "https://ca.sale-events.com" },
+    { "type": "origin", "origin": "https://hk.sale-events.com" },
+    { "type": "origin", "origin": "https://ie.sale-events.com" },
+    { "type": "origin", "origin": "https://jp.sale-events.com" },
+    { "type": "origin", "origin": "https://mt.sale-events.com" },
+    { "type": "origin", "origin": "https://nz.sale-events.com" },
+    { "type": "origin", "origin": "https://ph.sale-events.com" },
+    { "type": "origin", "origin": "https://sg.sale-events.com" },
+    { "type": "origin", "origin": "https://tw.sale-events.com" },
+    { "type": "origin", "origin": "https://uk.sale-events.com" },
+    { "type": "origin", "origin": "https://us.sale-events.com" }
+  ]
+}
