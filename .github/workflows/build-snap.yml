@@ -23,7 +23,7 @@ jobs:
       - name: Build and Publish Snap
         run: |
           sudo snap install snapcraft --classic
-          sudo -E npx electron-builder --linux snap -p always
+          sudo -E env "PATH=$PATH" npx electron-builder --linux snap -p always
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
