@@ -23,8 +23,7 @@
     },
     "snap": {
       "confinement": "strict",
-      "grade": "stable",
-      "useDestructiveMode": true
+      "grade": "stable"
     }
   }
 }
