@@ -26,9 +26,8 @@ jobs:
           
           sudo -E /bin/bash -c "
             export PATH=\$PATH:/snap/bin
-            snapcraft register sale-events || true
-            ./node_modules/.bin/electron-builder --linux snap -p always
-          "
+            snapcraft register sale-events-desktop || true
+            ./node_modules/.bin/electron-builder --linux snap -p always"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
