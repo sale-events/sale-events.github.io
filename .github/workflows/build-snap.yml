@@ -23,14 +23,7 @@ jobs:
       - name: Build and Publish Snap
         run: |
           sudo snap install snapcraft --classic --channel=8.x/stable
-          
-          node -e "const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('package.json')); pkg.name = 'sale-events-desktop'; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
-          
-          sudo -E /bin/bash -c "
-            export PATH=\$PATH:/snap/bin
-            snapcraft register sale-events-desktop --non-interactive || true
-            ./node_modules/.bin/electron-builder --linux snap -p always
-          "
+          ./node_modules/.bin/electron-builder --linux snap -p always
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
