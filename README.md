@@ -59,6 +59,3 @@ Due to aggressive browser engine caching for origin associations, standard reloa
 3. Return to a standard browser tab, navigate to the targeted domain, and initialize DevTools (`F12`).
 4. Head to `Application` -> `Storage` -> Trigger **`Clear site data`**.
 5. Reload the page, execute a clean PWA installation, and perform cross-origin redirection testing.
-
----
-*Disclaimer: This repository hosts technical configurations and open-source schemas only. SaleEvents operates purely as an independent informational layout and does not sell any products, bookings, or services, nor is it affiliated with, authorized, or endorsed by any third-party brands or agencies. All product and company names are trademarks™ of their respective holders.*
