@@ -1,0 +1,30 @@
+{
+  "name": "sale-events",
+  "version": "1.0.0",
+  "description": "PWA Desktop Client for SaleEvents.",
+  "main": "main.js",
+  "author": "SaleEvents",
+  "license": "MIT",
+  "scripts": {
+    "build": "electron-builder --linux snap"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.saleevents.app",
+    "productName": "SaleEvents",
+    "linux": {
+      "target": [
+        "snap"
+      ]
+    },
+    "snap": {
+      "confinement": "strict",
+      "grade": "stable",
+      "useDestructiveMode": true
+    }
+  }
+}
