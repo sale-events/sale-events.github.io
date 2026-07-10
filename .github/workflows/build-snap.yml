@@ -23,7 +23,12 @@ jobs:
       - name: Build and Publish Snap
         run: |
           sudo snap install snapcraft --classic --channel=8.x/stable
-          sudo -E /bin/bash -c "export PATH=$PATH:/snap/bin; ./node_modules/.bin/electron-builder --linux snap -p always"
+          
+          sudo -E /bin/bash -c "
+            export PATH=\$PATH:/snap/bin
+            snapcraft register sale-events || true
+            ./node_modules/.bin/electron-builder --linux snap -p always
+          "
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
