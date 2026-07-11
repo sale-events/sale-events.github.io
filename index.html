@@ -1,46 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaleEvents Technical Layout Framework Specification</title>
-    <link rel="manifest" href="manifest.json">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #fafafa; }
-        h1 { color: #111; border-bottom: 2px solid #e2923d; padding-bottom: 10px; font-size: 2em; }
-        h1 a { color: #111; text-decoration: none; }
-        h1 a:hover { text-decoration: underline; color: #e2923d; }
-        .meta { color: #666; font-size: 0.9em; margin-bottom: 30px; letter-spacing: 0.5px; font-weight: 500; }
-        .card { background: #fff; padding: 25px; border: 1px solid #eee; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); margin-bottom: 25px; }
-        h3 { color: #222; margin-top: 0; border-left: 3px solid #e2923d; padding-left: 10px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        a { color: #e2923d; text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-        p { color: #444; }
-        code { background: #f1f1f1; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
-        footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.8em; color: #888; line-height: 1.5; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaleEvents | Global PWA & Deployment Infrastructure Documentation</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: #cbd5e1;
+      --primary-color: #38bdf8;
+      --accent-color: #10b981;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      color: #fff;
+      font-size: 2.25rem;
+      margin: 0 0 0.5rem 0;
+    }
+    h2 {
+      color: #f1f5f9;
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 0.75rem;
+    }
+    p {
+      margin: 0 0 1.25rem 0;
+      font-size: 1.05rem;
+    }
+    .badge-group {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: monospace;
+      color: var(--primary-color);
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background-color: var(--card-bg);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+    .matrix-table th, .matrix-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .matrix-table th {
+      background-color: #111827;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .matrix-table td {
+      font-size: 0.95rem;
+    }
+    .matrix-table a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .matrix-table a:hover {
+      border-bottom-color: var(--primary-color);
+    }
+    .tag {
+      background: #334155;
+      color: #94a3b8;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-family: monospace;
+    }
+    .store-badges {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .store-badges img {
+      height: 40px;
+      display: block;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      text-align: center;
+      color: #64748b;
+    }
+  </style>
 </head>
 <body>
 
-    <h1><a href="https://sale-events.com/" target="_blank">SaleEvents</a> Technical Layout Framework</h1>
-    <p class="meta">Status: Public Distribution Vector | Interoperability Level: Modern Chromium Active (N-1 Constraint)</p>
-    
-    <div class="card">
-        <h3>Cross-Subdomain Interoperability Matrix</h3>
-        <p>This public distribution vector serves as the official distribution framework and semantic mirroring blueprint for the <strong>SaleEvents PWA Technical Layout Specifications</strong>.</p>
-        <p>The declarative manifests and flat origin association schemas hosted within this repository define the architectural constraints required to securely share cross-subdomain standalone navigation contexts without user interface or session fragmentation.</p>
-        
-        <p>Current matrix scale targets a total network infrastructure of 13 cross-connected nodes, bound tightly via <code>scope_extensions</code> and synchronized cryptographic handshakes across all regional endpoints.</p>
+<div class="container">
+  <header>
+    <h1>SaleEvents Infrastructure Matrix</h1>
+    <p>Official open-source deployment architecture guidelines, client applications index, and multi-regional edge environment status documentation.</p>
+
+    <div class="store-badges">
+      <a href="https://apps.microsoft.com/detail/9NMRBJHLQSNJ" target="_blank" rel="noopener">
+        <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft" />
+      </a>
+      <a href="https://snapcraft.io/sale-events" target="_blank" rel="noopener">
+        <img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" />
+      </a>
     </div>
 
-    <div class="card">
-        <h3>Core Technical Specifications</h3>
-        <ul>
-            <li><strong>Web App Manifest:</strong> <a href="manifest.json" target="_blank">manifest.json Blueprint</a> — Explicitly declared with global tracking signatures and regional scopes.</li>
-            <li><strong>Production Anchor:</strong> <a href="https://sale-events.com/" target="_blank">Primary Live Node (sale-events.com)</a> — Central authority node for identity verification lookup.</li>
-        </ul>
+    <div class="badge-group">
+      <span class="badge">Repository: sale-events/infrastructure</span>
+      <span class="badge">PWA Ecosystem: Verified</span>
+      <span class="badge">CI/CD Pipeline: Active</span>
     </div>
+  </header>
+
+  <main>
+    <h2>1. Global Architecture & PWA Optimization</h2>
+    <p>The SaleEvents core rendering framework leverages a fully decoupled structural approach optimized for high-frequency data ingestion and local cache persistence. By distributing content pipelines across localized application layers, the layout minimizes network latency and ensures instantaneous content delivery for cross-border markets.</p>
+    <p>Our localized service workers utilize a highly customized lifecycle strategy (Service Worker V2 Framework) that intercept and fulfill fetch requests directly from the client cache, allowing seamless navigation and background data synchronizations even in restricted offline network environments.</p>
+
+    <h2>2. Cross-Subdomain Interoperability</h2>
+    <p>To respect strict regional domain isolation while ensuring cross-border layout continuity, user configuration states and session preferences are managed securely on the edge browser context via cryptographic event buses, strictly bypassing rigid server-side overhead.</p>
+
+    <h2>3. Automated Build & Client Distributions</h2>
+    <p>The Monorepo architecture natively integrates automated compiler workflows to compile and push verified assets directly to application distribution centers. Production pipelines automatically trigger cross-compilation matrixes to ensure software availability across varying user system environments, natively bound to the core organization network entity.</p>
+
+    <h2>4. Live Regional Production Matrix</h2>
+    <p>The following deployment matrix lists the currently validated regional edge configurations and active live production endpoints across the SaleEvents multi-region layout infrastructure:</p>
+
+    <table class="matrix-table">
+      <thead>
+      <tr>
+        <th>Region / ISO</th>
+        <th>Environment Target</th>
+        <th>Core Stack Modules</th>
+        <th>Active Production Node</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>Global / US</strong></td>
+        <td>Edge Global Anchor</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://us.sale-events.com/">us.sale-events.com Global Anchor Node</a></td>
+      </tr>
+      <tr>
+        <td><strong>Australia (AU)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://au.sale-events.com/">au.sale-events.com Active Instance</a></td>
+      </tr>
+      <tr>
+        <td><strong>Canada (CA)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://ca.sale-events.com/">ca.sale-events.com Verified Endpoint</a></td>
+      </tr>
+      <tr>
+        <td><strong>Ireland (IE)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://ie.sale-events.com/">ie.sale-events.com Regional Node</a></td>
+      </tr>
+      <tr>
+        <td><strong>Malta (MT)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://mt.sale-events.com/">mt.sale-events.com Operational Node</a></td>
+      </tr>
+      <tr>
+        <td><strong>New Zealand (NZ)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://nz.sale-events.com/">nz.sale-events.com Edge Endpoint</a></td>
+      </tr>
+      <tr>
+        <td><strong>Philippines (PH)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://ph.sale-events.com/">ph.sale-events.com Regional Cluster</a></td>
+      </tr>
+      <tr>
+        <td><strong>Singapore (SG)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://sg.sale-events.com/">sg.sale-events.com Production Endpoint</a></td>
+      </tr>
+      <tr>
+        <td><strong>United Kingdom (UK)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://uk.sale-events.com/">uk.sale-events.com Server Node</a></td>
+      </tr>
+      <tr>
+        <td><strong>Japan (JP)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://jp.sale-events.com/">jp.sale-events.com 稼働中ノード</a></td>
+      </tr>
+      <tr>
+        <td><strong>Taiwan (TW)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://tw.sale-events.com/">tw.sale-events.com 區域營運節點</a></td>
+      </tr>
+      <tr>
+        <td><strong>Hong Kong (HK)</strong></td>
+        <td>Edge Regional Node</td>
+        <td><span class="tag">PWA + Service Worker V2</span></td>
+        <td><a href="https://hk.sale-events.com/">hk.sale-events.com 邊緣快取節點</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; <script>document.write(new Date().getFullYear())</script> SaleEvents Open Source Project. All distribution channels and production origins are published under verified cryptographic authority clusters.</p>
+  </footer>
+</div>
+
 </body>
 </html>
