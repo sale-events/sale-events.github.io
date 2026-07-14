@@ -5,6 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="msvalidate.01" content="84A6C35035A1B73379C63227543BB875" />
   <title>SaleEvents | Global PWA & Deployment Infrastructure Documentation</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://sale-events.github.io/#webpage",
+            "url": "https://sale-events.github.io/",
+            "name": "SaleEvents PWA Infrastructure & Live Gateway",
+            "description": "The official live gateway for SaleEvents open-source infrastructure, presenting decoupled multi-region PWA configurations and cross-subdomain state synchronization mechanisms.",
+            "isPartOf": {
+                "@id": "https://sale-events.github.io/#github-website"
+            },
+            "about": {
+                "@id": "https://sale-events.com/#organization"
+            },
+            "mainEntity": {
+                "@id": "https://sale-events.com/#pwa-infrastructure-code"
+            },
+            "relatedLink": [
+                "https://github.com/sale-events"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://sale-events.github.io/#github-website",
+            "url": "https://sale-events.github.io/",
+            "name": "SaleEvents GitHub Pages",
+            "publisher": {
+                "@id": "https://sale-events.com/#organization"
+            }
+        },
+        {
+            "@type": "ProfilePage",
+            "@id": "https://github.com/sale-events#profilepage",
+            "url": "https://github.com/sale-events",
+            "name": "SaleEvents - GitHub Organization Profile",
+            "mainEntity": {
+                "@id": "https://sale-events.com/#organization"
+            }
+        },
+        {
+            "@type": "NewsMediaOrganization",
+            "@id": "https://sale-events.com/#organization",
+            "name": "SaleEvents",
+            "url": "https://sale-events.com/",
+            "sameAs": [
+                "https://github.com/sale-events"
+            ]
+        },
+        {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://sale-events.com/#pwa-infrastructure-code",
+            "name": "SaleEvents PWA & Deployment Infrastructure",
+            "description": "Core repository hosting the multi-region PWA layout framework, Service Worker configurations, cross-subdomain interoperability specifications, and automated Snapcraft build pipelines.",
+            "programmingLanguage": "JavaScript",
+            "runtimePlatform": "Modern Web Browsers",
+            "codeRepository": "https://github.com/sale-events/sale-events.github.io",
+            "targetProduct": [
+                {
+                    "@id": "https://sale-events.com/#linux-app"
+                },
+                {
+                    "@id": "https://sale-events.com/#windows-app"
+                }
+            ],
+            "author": {
+                "@id": "https://sale-events.com/#organization"
+            }
+        },
+        {
+            "@type": "SoftwareApplication",
+            "@id": "https://sale-events.com/#linux-app",
+            "name": "SaleEvents Linux Snap",
+            "operatingSystem": "Linux",
+            "applicationCategory": "LifestyleApplication",
+            "downloadUrl": "https://snapcraft.io/sale-events",
+            "sameAs": "https://snapcraft.io/sale-events",
+            "softwareHelp": [
+                "https://github.com/sale-events/sale-events.github.io/blob/main/README.md",
+                "https://github.com/sale-events/.github/blob/main/profile/README.md"
+            ],
+            "supportingData": [
+                "https://sale-events.github.io/manifest.json",
+                "https://sale-events.github.io/index.html",
+                "https://github.com/sale-events/sale-events.github.io/blob/main/.github/workflows/build-snap.yml",
+                "https://github.com/sale-events/sale-events.github.io/blob/main/main.js",
+                "https://github.com/sale-events/sale-events.github.io/blob/main/package.json"
+            ],
+            "publisher": {
+                "@id": "https://sale-events.com/#organization"
+            }
+        },
+        {
+            "@type": "SoftwareApplication",
+            "@id": "https://sale-events.com/#windows-app",
+            "name": "SaleEvents Windows App",
+            "operatingSystem": "Windows",
+            "applicationCategory": "LifestyleApplication",
+            "downloadUrl": "https://apps.microsoft.com/detail/sale-events",
+            "sameAs": "https://apps.microsoft.com/detail/sale-events",
+            "softwareHelp": [
+                "https://github.com/sale-events/sale-events.github.io/blob/main/README.md",
+                "https://github.com/sale-events/.github/blob/main/profile/README.md"
+            ],
+            "supportingData": [
+                "https://sale-events.github.io/manifest.json",
+                "https://sale-events.github.io/index.html"
+            ],
+            "publisher": {
+                "@id": "https://sale-events.com/#organization"
+            }
+        }
+    ]
+}
+</script>
   <style>
     :root {
       --bg-color: #0f172a;
