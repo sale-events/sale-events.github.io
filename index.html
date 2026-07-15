@@ -52,6 +52,7 @@
             "name": "SaleEvents",
             "url": "https://sale-events.com/",
             "sameAs": [
+                "https://www.wikidata.org/wiki/Q140563365",
                 "https://github.com/sale-events"
             ]
         },
@@ -65,12 +66,26 @@
             "codeRepository": "https://github.com/sale-events/sale-events.github.io",
             "targetProduct": [
                 {
+                    "@id": "https://sale-events.com/#webapp"
+                },
+                {
                     "@id": "https://sale-events.com/#linux-app"
                 },
                 {
                     "@id": "https://sale-events.com/#windows-app"
                 }
             ],
+            "author": {
+                "@id": "https://sale-events.com/#organization"
+            }
+        },
+        {
+            "@type": "WebApplication",
+            "@id": "https://sale-events.com/#webapp",
+            "name": "SaleEvents Web App",
+            "operatingSystem": "All",
+            "applicationCategory": "LifestyleApplication",
+            "sameAs": "https://www.wikidata.org/wiki/Q140563531",
             "author": {
                 "@id": "https://sale-events.com/#organization"
             }
@@ -94,7 +109,7 @@
                 "https://github.com/sale-events/sale-events.github.io/blob/main/main.js",
                 "https://github.com/sale-events/sale-events.github.io/blob/main/package.json"
             ],
-            "publisher": {
+            "author": {
                 "@id": "https://sale-events.com/#organization"
             }
         },
@@ -114,7 +129,7 @@
                 "https://sale-events.github.io/manifest.json",
                 "https://sale-events.github.io/index.html"
             ],
-            "publisher": {
+            "author": {
                 "@id": "https://sale-events.com/#organization"
             }
         }
